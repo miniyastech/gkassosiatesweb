@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>[PAGE TITLE] — GK Associates</title>
+
+  <!-- Fonts: Merriweather (headings) + Roboto (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-dark':   '#0f172a',
+            'brand-light':  '#ffffff',
+            'brand-accent': '#2563eb',
+            'brand-muted':  '#94a3b8',
+          },
+          fontFamily: {
+            serif: ['var(--font-serif)', 'Georgia', 'serif'],
+            sans:  ['var(--font-sans)',  'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Tech Corporate — single locked theme */
+    :root {
+      --bd: 15 23 42;        /* #0f172a  Navy         */
+      --bl: 255 255 255;     /* #ffffff               */
+      --ba: 37 99 235;       /* #2563eb  Royal Blue   */
+      --bm: 148 163 184;     /* #94a3b8               */
+      --font-serif: 'Merriweather', Georgia, serif;
+      --font-sans:  'Roboto', system-ui, sans-serif;
+    }
+    body {
+      background-color: rgb(var(--bl));
+      color: rgb(var(--bd));
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    h1, h2, h3, h4, h5, h6 { font-family: var(--font-serif); }
+  </style>
+
+  <style>
+    /* Brand color overrides — pure CSS, works with Tailwind v3 & v4 */
+    .font-serif { font-family: var(--font-serif) !important; }
+    .font-sans  { font-family: var(--font-sans)  !important; }
+    .bg-brand-dark   { background-color: rgb(var(--bd)) !important; }
+    .bg-brand-light  { background-color: rgb(var(--bl)) !important; }
+    .bg-brand-accent { background-color: rgb(var(--ba)) !important; }
+    .bg-brand-muted  { background-color: rgb(var(--bm)) !important; }
+    .text-brand-dark   { color: rgb(var(--bd)) !important; }
+    .text-brand-light  { color: rgb(var(--bl)) !important; }
+    .text-brand-accent { color: rgb(var(--ba)) !important; }
+    .text-brand-muted  { color: rgb(var(--bm)) !important; }
+    .border-brand-dark   { border-color: rgb(var(--bd)) !important; }
+    .border-brand-accent { border-color: rgb(var(--ba)) !important; }
+    .border-brand-muted  { border-color: rgb(var(--bm)) !important; }
+    .bg-brand-accent\/5    { background-color: rgb(var(--ba) / 0.05) !important; }
+    .bg-brand-accent\/10   { background-color: rgb(var(--ba) / 0.10) !important; }
+    .text-brand-dark\/60   { color: rgb(var(--bd) / 0.60) !important; }
+    .text-brand-muted\/40  { color: rgb(var(--bm) / 0.40) !important; }
+    .text-brand-accent\/10 { color: rgb(var(--ba) / 0.10) !important; }
+    .text-brand-accent\/15 { color: rgb(var(--ba) / 0.15) !important; }
+    .text-brand-accent\/20 { color: rgb(var(--ba) / 0.20) !important; }
+    .text-brand-accent\/30 { color: rgb(var(--ba) / 0.30) !important; }
+    .border-brand-muted\/15  { border-color: rgb(var(--bm) / 0.15) !important; }
+    .border-brand-muted\/20  { border-color: rgb(var(--bm) / 0.20) !important; }
+    .border-brand-accent\/30 { border-color: rgb(var(--ba) / 0.30) !important; }
+    .border-brand-accent\/40 { border-color: rgb(var(--ba) / 0.40) !important; }
+    .hover\:text-brand-accent:hover       { color: rgb(var(--ba)) !important; }
+    .hover\:bg-brand-dark:hover           { background-color: rgb(var(--bd)) !important; }
+    .hover\:border-brand-dark:hover       { border-color: rgb(var(--bd)) !important; }
+    .hover\:border-brand-accent\/40:hover { border-color: rgb(var(--ba) / 0.40) !important; }
+    .group:hover .group-hover\:text-brand-accent\/30 { color: rgb(var(--ba) / 0.30) !important; }
+    .group:hover .group-hover\:bg-brand-accent\/10   { background-color: rgb(var(--ba) / 0.10) !important; }
+    .group:hover .group-hover\:w-14                  { width: 3.5rem !important; }
+
+    /* Component classes */
+    .nav-link {
+      position: relative; font-size: 0.65rem; letter-spacing: 0.16em;
+      text-transform: uppercase; font-weight: 500;
+      color: rgb(var(--bd) / 0.6); transition: color 0.2s; text-decoration: none;
+    }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -2px; left: 0;
+      width: 0; height: 1px; background-color: rgb(var(--ba)); transition: width 0.3s;
+    }
+    .nav-link:hover, .nav-link.active         { color: rgb(var(--ba)); }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    .btn-primary {
+      display: inline-block; padding: 0.7rem 1.75rem;
+      background-color: rgb(var(--ba)); color: #fff;
+      font-family: var(--font-sans); font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      border: 1px solid rgb(var(--ba)); text-decoration: none; cursor: pointer;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+    .btn-primary:hover { background-color: rgb(var(--bd)); border-color: rgb(var(--bd)); color: #fff; }
+    .btn-outline {
+      display: inline-block; padding: 0.7rem 1.75rem;
+      background-color: transparent; color: rgb(var(--bd));
+      font-family: var(--font-sans); font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      border: 1px solid rgb(var(--bd)); text-decoration: none; cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .btn-outline:hover { background-color: rgb(var(--bd)); color: #fff; }
+    .btn-ghost-light {
+      display: inline-block; padding: 0.7rem 1.75rem;
+      background-color: transparent; color: rgba(255,255,255,0.7);
+      font-family: var(--font-sans); font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.25); text-decoration: none; cursor: pointer;
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+    .btn-ghost-light:hover { background-color: #fff; color: rgb(var(--bd)); border-color: #fff; }
+    .sec-tag {
+      display: block; font-family: var(--font-sans); font-size: 0.6rem;
+      letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500;
+      color: rgb(var(--ba));
+    }
+    .sec-h2 {
+      font-family: var(--font-serif); font-size: 1.875rem; font-weight: 600;
+      color: rgb(var(--bd)); line-height: 1.25; margin-top: 0.5rem;
+    }
+    @media (min-width: 768px) { .sec-h2 { font-size: 2.25rem; } }
+    .sec-rule {
+      width: 2.5rem; height: 0.125rem; background-color: rgb(var(--ba));
+      margin-top: 1rem; margin-bottom: 1.25rem;
+    }
+    .sec-body { color: rgb(var(--bm)); font-size: 0.9375rem; line-height: 1.625; }
+    .svc-card {
+      background-color: #fff; border: 1px solid rgb(var(--bm) / 0.15);
+      padding: 2rem; transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    }
+    .svc-card:hover {
+      border-color: rgb(var(--ba) / 0.3);
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+    .why-item { border-left: 2px solid rgb(var(--ba)); padding-left: 1.25rem; padding-top: 0.125rem; padding-bottom: 0.125rem; }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+  <!-- ════════════ THEME SWITCHER BAR ═════════════════════════════ -->
+  <div id="theme-bar" role="toolbar" aria-label="Design style selector">
+    <span class="ts-label">Design Style</span>
+    <div class="ts-sep"></div>
+    <button class="ts-btn" data-t="modern-law"        onclick="setTheme('modern-law')"><span class="dot"></span>Modern Law</button>
+    <button class="ts-btn" data-t="luxury-minimal"    onclick="setTheme('luxury-minimal')"><span class="dot"></span>Luxury Minimal</button>
+    <button class="ts-btn" data-t="tech-corporate"    onclick="setTheme('tech-corporate')"><span class="dot"></span>Tech Corporate</button>
+    <button class="ts-btn" data-t="editorial-classic" onclick="setTheme('editorial-classic')"><span class="dot"></span>Editorial Classic</button>
+  </div>
+
+  <!-- ════════════ HEADER (identical on every page) ═══════════════ -->
+  <!-- NOTE: Update class="nav-link active" on the current page's link -->
+  <header class="bg-white border-b border-brand-muted/20 sticky top-[44px] z-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex flex-col leading-none group">
+          <span class="font-serif text-[1.45rem] font-bold text-brand-dark tracking-tight
+                       group-hover:text-brand-accent transition-colors duration-200">GK Associates</span>
+          <span class="font-sans text-[0.58rem] tracking-[0.18em] uppercase text-brand-muted mt-0.5">Asset Valuation Firm</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-10">
+          <a href="index.html"    class="nav-link">Home</a>
+          <a href="about.html"    class="nav-link">About</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="team.html"     class="nav-link">Our Team</a>
+          <a href="contact.html"  class="nav-link">Contact</a>
+        </nav>
+        <label for="mob-toggle" class="md:hidden flex flex-col gap-[5px] cursor-pointer p-2" aria-label="Open menu">
+          <span class="w-6 h-px bg-brand-dark block"></span>
+          <span class="w-6 h-px bg-brand-dark block"></span>
+          <span class="w-4 h-px bg-brand-dark block"></span>
+        </label>
+      </div>
+    </div>
+    <input type="checkbox" id="mob-toggle" class="hidden peer" />
+    <nav class="md:hidden max-h-0 overflow-hidden peer-checked:max-h-[26rem] transition-all duration-500 bg-white border-t border-brand-muted/15">
+      <div class="flex flex-col px-6 py-5 gap-5">
+        <a href="index.html"    class="nav-link py-1">Home</a>
+        <a href="about.html"    class="nav-link py-1">About</a>
+        <a href="services.html" class="nav-link py-1">Services</a>
+        <a href="team.html"     class="nav-link py-1">Our Team</a>
+        <a href="contact.html"  class="nav-link py-1">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <!-- ════════════ END HEADER ═════════════════════════════════════ -->
+
+
+  <!-- ═══════════ PAGE HERO BANNER ════════════════════════════════
+       Update: page title, breadcrumb label
+  ════════════════════════════════════════════════════════════════ -->
+  <section class="bg-brand-dark relative overflow-hidden">
+    <div class="absolute left-0 top-0 bottom-0 w-1 bg-brand-accent"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 md:py-20">
+      <p class="font-sans text-brand-accent text-xs tracking-widest uppercase mb-3">GK Associates</p>
+      <h1 class="font-serif text-3xl md:text-5xl font-bold text-white">[Page Title]</h1>
+      <!-- Breadcrumb -->
+      <nav class="mt-4 flex items-center gap-2 text-xs text-brand-muted uppercase tracking-widest">
+        <a href="index.html" class="hover:text-brand-accent transition-colors">Home</a>
+        <span class="text-brand-accent">/</span>
+        <span class="text-white">[Page Name]</span>
+      </nav>
+    </div>
+  </section>
+  <!-- ═══════════ END PAGE HERO ═══════════════════════════════════ -->
+
+
+  <!-- ═══════════ MAIN CONTENT — REPLACE BELOW ════════════════════ -->
+  <main class="flex-1">
+
+    <!-- ── YOUR PAGE SECTIONS GO HERE ──────────────────────────── -->
+    <section class="py-20 md:py-28">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <p class="text-brand-muted text-center">[ Paste page content here ]</p>
+      </div>
+    </section>
+
+  </main>
+  <!-- ═══════════ END MAIN CONTENT ════════════════════════════════ -->
+
+
+  <!-- ════════════ FOOTER (identical on every page) ═════════════ -->
+  <footer class="bg-brand-dark text-brand-muted">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div>
+        <a href="index.html" class="inline-block mb-4 group">
+          <span class="font-serif text-xl font-bold text-white group-hover:text-brand-accent transition-colors duration-200">GK Associates</span>
+        </a>
+        <p class="text-sm leading-relaxed mb-5">
+          A trusted asset advisory and valuation firm delivering accurate, compliant, and timely property valuation reports.
+        </p>
+        <span class="font-sans text-[0.58rem] tracking-widest uppercase text-brand-accent">Accuracy · Compliance · Timely Delivery</span>
+      </div>
+      <div>
+        <h5 class="font-serif text-white text-base font-semibold mb-5">Quick Links</h5>
+        <ul class="space-y-3 text-sm">
+          <li><a href="index.html"    class="hover:text-brand-accent transition-colors duration-200">Home</a></li>
+          <li><a href="about.html"    class="hover:text-brand-accent transition-colors duration-200">About Us</a></li>
+          <li><a href="services.html" class="hover:text-brand-accent transition-colors duration-200">Our Services</a></li>
+          <li><a href="team.html"     class="hover:text-brand-accent transition-colors duration-200">Our Team</a></li>
+          <li><a href="contact.html"  class="hover:text-brand-accent transition-colors duration-200">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="font-serif text-white text-base font-semibold mb-5">Our Services</h5>
+        <ul class="space-y-3 text-sm">
+          <li><a href="services.html" class="hover:text-brand-accent transition-colors duration-200">Property Valuation</a></li>
+          <li><a href="services.html" class="hover:text-brand-accent transition-colors duration-200">Bank Valuation Reports</a></li>
+          <li><a href="services.html" class="hover:text-brand-accent transition-colors duration-200">Technical Verification</a></li>
+          <li><a href="services.html" class="hover:text-brand-accent transition-colors duration-200">Market Value Assessment</a></li>
+          <li><a href="services.html" class="hover:text-brand-accent transition-colors duration-200">Collateral Evaluation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs">
+        <span>&copy; 2026 GK Associates. All rights reserved.</span>
+        <span class="text-brand-muted/40">Asset Valuation Firm · Tamil Nadu</span>
+      </div>
+    </div>
+  </footer>
+  <!-- ════════════ END FOOTER ══════════════════════════════════════ -->
+
+
+
+</body>
+</html>
+

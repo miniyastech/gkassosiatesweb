@@ -1,0 +1,153 @@
+{
+  "business": {
+    "name"              : "GK Associates",
+    "tagline"           : "Asset Valuation Firm",
+    "footer_description": "A trusted asset advisory and valuation firm delivering accurate, compliant, and timely property valuation reports for banks, businesses, and individuals.",
+
+    "phone_landline"   : "04562 - 254391",
+    "phone_mobile"     : "+91 90878 01888",
+    "email"             : "admin@gkvaluers.com",
+
+    "address"           : "No,7,8 Ground Floor, Sorna Complex<br/>Srivilliputhur Main Road, Near Railway Gate Bridge, Satchiyapuram, Sivakasi, Virudhunagar<br/>Tamil Nadu &ndash; 626124,<br/>India",
+
+    "hours"             : "Monday &ndash; Saturday: 9:00 AM &ndash; 6:00 PM<br/>Sunday: Closed",
+
+    "maps_embed_src"    : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d245.97239819667007!2d77.78212226307784!3d9.46006628416796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06cf80943dcc1d%3A0x2c3f6d90b63f310a!2sSORNA%20COMPLEX!5e0!3m2!1sen!2sin!4v1779373871131!5m2!1sen!2sin"
+  },
+
+  "home": {
+    "hero_sub"    : "Accurate, Compliant, and On-Time Reporting for Every Client.",
+    "about_p1"    : "GK Associates is a trusted asset advisory and valuation firm committed to delivering accurate, compliant, and timely valuation reports for banks, financial institutions, businesses, and individuals.",
+    "about_p2"    : "With a strong foundation in land and building valuation, we specialize in providing reliable property assessments that support informed decision-making in lending, investment, and legal processes. Our approach combines technical expertise, field-level verification, and regulatory compliance, ensuring every report meets industry standards and client expectations.",
+    "why_desc"    : "We combine professional expertise with a hands-on, client-first approach — delivering valuation reports that banks and businesses can rely on with complete confidence.",
+
+    "trust_items" : [
+      { "title": "Bank-Grade Accuracy",      "desc": "Reports that meet lending and regulatory standards." },
+      { "title": "Field-Level Verification", "desc": "Personal on-site inspection for every assignment." },
+      { "title": "On-Time Delivery",         "desc": "Reports delivered within committed timelines, always." },
+      { "title": "Regulatory Compliance",    "desc": "Full adherence to banking and statutory norms." }
+    ],
+
+    "core_commitments": [
+      { "title": "Accuracy",        "desc": "Detailed analysis with real-time market data and verified field observations." },
+      { "title": "Compliance",      "desc": "Adherence to banking and regulatory standards." },
+      { "title": "Timely Delivery", "desc": "Reports delivered within committed timelines." }
+    ]
+  },
+
+  "about": {
+    "who_p1"  : "GK Associates is a trusted asset advisory and valuation firm committed to delivering accurate, compliant, and timely valuation reports for banks, financial institutions, businesses, and individuals.",
+    "who_p2"  : "With a strong foundation in land and building valuation, we specialize in providing reliable property assessments that support informed decision-making in lending, investment, and legal processes. Our approach combines technical expertise, field-level verification, and regulatory compliance, ensuring every report meets industry standards and client expectations.",
+    "who_p3"  : "GK Associates is led by a qualified valuation professional with hands-on experience in property inspection, documentation analysis, and market assessment. We understand the critical role valuation plays in financial approvals, and we ensure every assignment is handled with precision and integrity.",
+    "vision"  : "To become a reliable and recognized asset advisory firm, known for delivering high-quality valuation services across Tamil Nadu and beyond.",
+    "mission" : "To provide accurate, compliant, and dependable valuation services that help clients make confident financial and investment decisions.",
+
+    "defines_us": [
+      { "title": "Independent &amp; Objective", "desc": "Every valuation is conducted independently, free from external influence — ensuring complete objectivity in our assessments." },
+      { "title": "Field-First Approach",        "desc": "We believe every property deserves a physical inspection. No report is issued without on-site verification by our team." },
+      { "title": "Banking Sector Focus",        "desc": "Our reports are structured to meet the precise requirements of banks, NBFCs, and financial lenders across Tamil Nadu." }
+    ],
+
+    "core_values": [
+      { "letter": "A", "title": "Accuracy",        "desc": "We apply rigorous analytical methods — combining real-time market data, on-site observations, and documented evidence — to produce valuation reports of the highest precision. No estimate is made without verified ground data." },
+      { "letter": "C", "title": "Compliance",      "desc": "Every report produced by GK Associates adheres strictly to current banking norms, regulatory frameworks, and industry valuation standards. Our work is always documentation-ready, audit-safe, and legally sound." },
+      { "letter": "T", "title": "Timely Delivery", "desc": "We understand that valuation delays can impact loan processing and business timelines. GK Associates commits to delivering every report within the agreed timeline — without exception or compromise on quality." }
+    ]
+  },
+
+  "why_choose_us": [
+    { "title": "Trusted by Banking and Financial Sectors",    "desc": "Proven track record with banks, co-operative societies, and financial institutions across Tamil Nadu." },
+    { "title": "Strong Field Expertise and Practical Insights", "desc": "Strong on-ground insights backed by years of practical property inspection and market experience." },
+    { "title": "Transparent and Professional Reporting",       "desc": "Clear, professional documentation with no hidden assumptions, ambiguity, or inflated valuations." },
+    { "title": "Client-Focused with Quick Turnaround",         "desc": "Client-focused approach ensuring fast, reliable delivery every time — without compromise on quality." }
+  ],
+
+  "services": [
+    {
+      "number"  : "01",
+      "title"   : "Property Valuation",
+      "subtitle": "Land &amp; Building",
+      "summary" : "Comprehensive assessments using market comparisons, site inspections, and regulatory checks.",
+      "detail"  : "Our core service — comprehensive valuation of residential, commercial, and industrial properties. We assess land and building value using the comparative, cost, and income methods, supported by physical inspection and current market data. Reports are structured to meet both statutory and institutional requirements.",
+      "items"   : [
+        "Residential plots, houses, and apartments",
+        "Commercial buildings and office spaces",
+        "Industrial sheds, warehouses, and factory units",
+        "Agricultural land and special-purpose properties",
+        "Comparative market analysis and distress value assessment"
+      ]
+    },
+    {
+      "number"  : "02",
+      "title"   : "Bank Valuation Reports",
+      "subtitle": "Lender-Ready Format",
+      "summary" : "Structured reports formatted to meet the specific requirements of banks and financial lenders.",
+      "detail"  : "We prepare structured valuation reports specifically formatted to meet the requirements of nationalised banks, private banks, co-operative banks, NBFCs, and housing finance companies. Our reports include all mandatory disclosures, photographs, and supporting documentation expected by lending institutions.",
+      "items"   : [
+        "Formatted as per individual bank guidelines",
+        "Guideline value, market value, and distress value calculations",
+        "Photographic documentation of property and site",
+        "Compliance with RBI and NHB valuation norms",
+        "Encumbrance and title document cross-referencing"
+      ]
+    },
+    {
+      "number"  : "03",
+      "title"   : "Technical Verification",
+      "subtitle": "&amp; Site Inspection",
+      "summary" : "On-ground verification of property details, construction quality, and legal documentation.",
+      "detail"  : "A physical inspection service that verifies the actual condition, construction quality, legal compliance, and documentation of a property. Essential for pre-disbursement verification, project monitoring, and due diligence requirements of lending institutions and investors.",
+      "items"   : [
+        "On-site physical measurement and area verification",
+        "Construction quality and stage assessment",
+        "Legal document and plan approval verification",
+        "Patta, chitta, and EC cross-reference checks",
+        "Deviation and encroachment identification"
+      ]
+    },
+    {
+      "number"  : "04",
+      "title"   : "Market Value Assessment",
+      "subtitle": "Real-Time Analysis",
+      "summary" : "Real-time market data analysis to determine accurate current value for informed decisions.",
+      "detail"  : "Independent, data-driven analysis to determine the fair market value of a property based on current transaction data, location factors, demand trends, and comparable sales. Useful for purchase decisions, negotiations, portfolio management, and dispute resolution.",
+      "items"   : [
+        "Current market rate analysis by locality and zone",
+        "Comparative sales and rental yield data",
+        "Location, access, and amenity value factoring",
+        "Market trend projections for investment decisions",
+        "Pre-purchase and pre-sale advisory reports"
+      ]
+    },
+    {
+      "number"  : "05",
+      "title"   : "Project &amp; Collateral Evaluation",
+      "subtitle": "Loans &amp; Legal",
+      "summary" : "Evaluation of collateral assets and project properties for loan processing and investment appraisal.",
+      "detail"  : "Specialised evaluation of collateral assets and development projects offered as security for loans, investments, or legal purposes. Covers all stages of project development — from land acquisition through construction completion — ensuring lenders and investors have accurate, defensible valuations at every stage.",
+      "items"   : [
+        "Pre-sanction collateral valuation for loans",
+        "Construction stage monitoring for project loans",
+        "Residual value assessment of ongoing projects",
+        "Court, legal, and statutory valuation reports",
+        "NRI and corporate property portfolio valuation"
+      ]
+    }
+  ],
+
+  "team": [
+    {
+      "name"           : "Ganesh Kumar M",
+      "title"          : "Founder &amp; Lead Valuation Expert",
+      "bio_p1"         : "A qualified valuation professional with extensive experience in property assessment, bank-grade reporting, and field-level site inspection across Tamil Nadu.",
+      "bio_p2"         : "Specialises in residential, commercial, and industrial valuations — delivering accurate, compliant reports that meet the precise standards expected by banks, NBFCs, and financial institutions across the region.",
+      "expertise"      : ["Approved Valuer", "Chartered Engineer"],
+      "qualifications" : [
+        { "title": "Approved Valuer",     "subtitle": "Qualified &amp; Registered" },
+        { "title": "Chartered Engineer",  "subtitle": "Technical Expertise" },
+        { "title": "Bank Empanelled",     "subtitle": "Multiple Institutions" },
+        { "title": "Tamil Nadu Coverage", "subtitle": "Pan-State Field Work" }
+      ]
+    }
+  ]
+}
