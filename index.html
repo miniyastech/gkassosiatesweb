@@ -1,43 +1,19 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="./site_content/logo.png" type="image/png" />
-  <link rel="icon" type="image/png" href="./site_content/logo.png" />
+  <link rel="shortcut icon" href="./site_content/favicon.ico" type="image/x-icon" />
+  <link rel="icon" type="image/x-icon" href="./site_content/favicon.ico" />
   <title>GK Associates — Trusted Asset Valuation Firm</title>
 
   <!-- ── Fonts: Merriweather (headings) + Roboto (body) ──────────── -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
-
   <!-- ── Tailwind CSS CDN ────────────────────────────────────────
        Used for layout utilities only (flex, grid, spacing, sizing).
        All brand colors are handled via pure CSS below — works with
        both Tailwind v3 and v4, and even if CDN changes versions.
   ───────────────────────────────────────────────────────────────── -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    // Hardcoded fallback colors so Tailwind generates the class names.
-    // Actual theme colors are applied via CSS variable overrides below.
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'brand-dark':   '#0f172a',
-            'brand-light':  '#ffffff',
-            'brand-accent': '#2563eb',
-            'brand-muted':  '#94a3b8',
-          },
-          fontFamily: {
-            serif: ['var(--font-serif)', 'Georgia', 'serif'],
-            sans:  ['var(--font-sans)',  'system-ui', 'sans-serif'],
-          },
-        },
-      },
-    };
-  </script>
+  <link rel="stylesheet" href="./site_content/styles.css" />
 
   <style>
     /* ══════════════════════════════════════════════════════════════
