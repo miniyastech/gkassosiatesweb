@@ -7,10 +7,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'brand-dark':   '#0f172a',
+        'brand-dark':   '#0b1526',
+        'brand-dark-2': '#0f2138',
         'brand-light':  '#ffffff',
-        'brand-accent': '#2563eb',
-        'brand-muted':  '#94a3b8',
+        'brand-accent': '#14b8a6',
+        'brand-accent-strong': '#0d9488',
+        'brand-muted':  '#64748b',
       },
       fontFamily: {
         serif: ['var(--font-serif)', 'Georgia', 'serif'],

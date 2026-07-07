@@ -34,9 +34,8 @@
 
   /* Hero trust panel  →  #home-trust-items  (ul) */
   function trustItem(item) {
-    return '<li class="flex items-start gap-4">' +
-      '<span class="mt-0.5 w-5 h-5 flex-shrink-0 flex items-center justify-center ' +
-             'border border-brand-accent text-brand-accent text-[0.6rem] font-bold">\u2713</span>' +
+    return '<li class="glass-item">' +
+      '<span class="glass-dot">\u2713</span>' +
       '<div>' +
         '<p class="font-serif text-white text-[0.95rem] font-semibold">' + item.title + '</p>' +
         '<p class="text-brand-muted text-xs mt-0.5 leading-relaxed">' + item.desc + '</p>' +

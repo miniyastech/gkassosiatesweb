@@ -50,17 +50,20 @@
 - [ ] Before-state screenshots — **skipped**: no browser/screenshot tool available in this environment; recommend a quick manual look via `npm run serve` before Sprint 1 visual changes begin, as the before/after baseline
 - [ ] Push branch to GitHub / confirm Vercel Preview Deployment — pending commit of the Sprint 0 changes above; push happens next, Vercel deployment status needs to be checked on your dashboard since no Vercel access/token is available here
 
-### Sprint 1 — Design Direction & Token System *(1 day)*
-- [ ] Define 2–3 visual direction concepts (e.g. "Executive Navy", "Editorial Minimal", "Modern Trust") using `ui-ux-pro-max` palette/font-pairing intelligence
-- [ ] Present concepts as an Artifact mockup for stakeholder sign-off
-- [ ] Once approved: build design tokens (primitive → semantic → component) — color, type scale, spacing, radii, shadow, motion durations
-- [ ] Update `input.css` / precompiled `site_content/styles.css` build to reflect new tokens
+### Sprint 1 — Design Direction & Token System *(1 day)* — ✅ Complete
+- [x] Presented 3 visual direction concepts (Executive Navy / Editorial Minimal / Modern Trust) as an Artifact mockup built with real homepage copy, using `ui-ux-pro-max` for palette/typography/style research
+- [x] Stakeholder picked **Concept C — Modern Trust**: deep navy panels, restrained glass cards, teal accent (`#14b8a6`) replacing the old royal blue, single unified grotesk typeface
+- [x] Built the token system in `input.css` (`@layer base { :root {...} }`) — primitives (`--navy-950/900`, `--teal-500/600`, `--slate-500`) mapped to the original semantic variable names (`--bd`, `--ba`, `--bm`, etc.) so every existing `bg-brand-*` / `text-brand-*` / `border-brand-*` class across all 5 pages repoints automatically, with no markup changes required
+- [x] **Font swap, with a fix found along the way:** while sourcing the concept's single-grotesk typography, discovered the self-hosted Roboto (300/400/500/700) and Merriweather (400/700) `.woff2` files were each byte-for-byte identical across their supposed weights — bold text has never actually rendered bold anywhere on the site, only browser-synthesized faux-bold. Replaced both with self-hosted **IBM Plex Sans** (400/500/600/700), fetched and verified as four genuinely distinct weight files, fixing the underlying bug while adopting the concept's typography
+- [x] Centralized the entire component CSS library (previously duplicated verbatim inside every page's `<head>`) into `input.css` / `site_content/styles.css` — one source of truth instead of 6 copies
+- [x] Updated `tailwind.config.js` theme colors to match, as a defense-in-depth backstop behind the manual CSS overrides
+- [x] Rebuilt via `npm run build` and verified output
 
-### Sprint 2 — Core Layout & Shared Components *(1 day)*
-- [ ] Redesign header/navigation (sticky behavior, formal but modern, subtle motion)
-- [ ] Redesign footer
-- [ ] New hero pattern for `index.html`
-- [ ] Shared reusable component classes: buttons, cards, section dividers, badges — applied consistently across pages
+### Sprint 2 — Core Layout & Shared Components *(1 day)* — ✅ Complete
+- [x] Redesigned header: frosted/backdrop-blur sticky bar (`.site-header`), added a `Request a Report` CTA button (`.btn-primary-sm`) to desktop nav on all 5 pages + template
+- [x] Redesigned footer: added a teal top accent border (`.border-brand-accent`) consistently on all 5 pages + template; content unchanged
+- [x] New hero pattern for `index.html`: navy→navy-2 gradient background (`.hero-gradient`) replacing the flat dark fill, trust panel rewired onto a reusable `.glass-panel`/`.glass-item`/`.glass-dot` component (frosted glass, teal icon dots) instead of one-off utility classes, subtle fade-up entrance motion (`.reveal-up`, respects `prefers-reduced-motion`)
+- [x] Shared reusable component classes consolidated in `input.css`: `.btn-primary` / `.btn-outline` / `.btn-ghost-light` / `.btn-primary-sm`, `.svc-card` / `.svc-detail` / `.val-card` / `.team-card`, `.sec-tag` / `.sec-h2` / `.sec-rule` / `.sec-body`, `.glass-panel` / `.glass-item` / `.glass-dot`, `.chk-list`, `.exp-tag`, `.info-icon` / `.contact-card`, `.avatar` — all now defined once and used across pages instead of being redefined (or missing) per page
 
 ### Sprint 3 — Page-by-Page Redesign *(2 days)*
 - [ ] `index.html` — hero, trust items, services summary, why-choose-us
