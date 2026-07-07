@@ -183,6 +183,18 @@
     render('founder-qualifications',  data.team && data.team[0] && data.team[0].qualifications,           function (c) { return c.map(founderQualCard).join(''); });
   }
 
+  /* ── Mobile nav disclosure (keyboard/screen-reader accessible) ──
+     Independent of the data.json fetch below — the menu must open
+     even if content fails to load. */
+  document.querySelectorAll('.mobile-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var target = document.getElementById(btn.getAttribute('aria-controls'));
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      if (target) target.classList.toggle('is-open');
+    });
+  });
+
   /* ── Fetch site_content/data.json ─────────────────────────── */
   fetch('./site_content/data.json')
     .then(function (res) {

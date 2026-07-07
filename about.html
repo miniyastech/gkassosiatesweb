@@ -17,7 +17,7 @@
     <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         <a href="/" class="flex items-center">
-          <img src="./site_content/logo.png" alt="GK Associates" class="h-12 w-auto object-contain" />
+          <img src="./site_content/logo.png" alt="GK Associates" width="400" height="218" class="h-12 w-auto object-contain" />
         </a>
         <nav class="hidden md:flex items-center gap-8">
           <a href="/"    class="nav-link">Home</a>
@@ -27,21 +27,22 @@
           <a href="/contact"  class="nav-link">Contact</a>
           <a href="/contact" class="btn-primary-sm">Request a Report</a>
         </nav>
-        <label for="mob-toggle" class="md:hidden flex flex-col gap-[5px] cursor-pointer p-2" aria-label="Open menu">
+        <button type="button" class="mobile-toggle md:hidden flex flex-col gap-[5px] p-2"
+                aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
           <span class="w-6 h-px bg-brand-dark block transition-all duration-300"></span>
           <span class="w-6 h-px bg-brand-dark block transition-all duration-300"></span>
           <span class="w-4 h-px bg-brand-dark block transition-all duration-300"></span>
-        </label>
+        </button>
       </div>
     </div>
-    <input type="checkbox" id="mob-toggle" class="hidden peer" />
-    <nav class="md:hidden max-h-0 overflow-hidden peer-checked:max-h-[26rem] transition-all duration-500 bg-white border-t border-brand-muted/15">
+    <nav id="mobile-nav" class="mobile-nav md:hidden bg-white border-t border-brand-muted/15">
       <div class="flex flex-col px-6 py-5 gap-5">
         <a href="/"    class="nav-link py-1">Home</a>
         <a href="/about"    class="nav-link py-1 active">About</a>
         <a href="/services" class="nav-link py-1">Services</a>
         <a href="/team"     class="nav-link py-1">Our Team</a>
         <a href="/contact"  class="nav-link py-1">Contact</a>
+        <a href="/contact" class="btn-primary-sm text-center">Request a Report</a>
       </div>
     </nav>
   </header>
@@ -106,7 +107,7 @@
       <div class="panel-texture"></div>
       <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-14">
-          <span class="sec-tag">Our Principles</span>
+          <span class="sec-tag text-brand-accent">Our Principles</span>
           <h2 class="sec-h2">Core Values</h2>
           <div class="sec-rule"></div>
         </div>
@@ -208,7 +209,7 @@
     <div class="border-t border-white/10">
       <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs">
         <span>&copy; 2026 GK Associates. All rights reserved.</span>
-        <span class="text-brand-muted/40">Asset Valuation Firm · Tamil Nadu</span>
+        <span class="text-brand-muted">Asset Valuation Firm · Tamil Nadu</span>
       </div>
     </div>
   </footer>

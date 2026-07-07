@@ -49,8 +49,10 @@
     --navy-800: 20 44 71;      /* #142c47 */
     --white:    255 255 255;
     --slate-500: 100 116 139;  /* #64748b */
+    --slate-400: 148 163 184;  /* #94a3b8 */
     --teal-500: 20 184 166;    /* #14b8a6 */
     --teal-600: 13 148 136;    /* #0d9488 */
+    --teal-700: 15 118 110;    /* #0f766e */
 
     /* semantic (kept under the original short names so every
        existing bg-brand, text-brand and border-brand utility
@@ -60,7 +62,14 @@
     --bl:  var(--white);       /* brand-light  */
     --ba:  var(--teal-500);    /* brand-accent */
     --bas: var(--teal-600);    /* brand-accent, stronger (hover/active) */
-    --bm:  var(--slate-500);   /* brand-muted  */
+    --bm:  var(--slate-500);   /* brand-muted, on LIGHT backgrounds (4.76:1 on white) */
+
+    /* WCAG AA fallbacks — the single teal/slate above don't pass 4.5:1
+       in both directions at once (bright teal 2.49:1 on white; muted
+       slate 3.84:1 on navy). These give text a safe value per surface
+       without introducing new utility classes across the markup. */
+    --bm-inverse: var(--slate-400); /* muted text ON dark panels: 7.13:1 on navy-950 */
+    --ba-text:    var(--teal-700);  /* accent text ON light backgrounds: 5.47:1 on white */
 
     --font-serif: 'IBM Plex Sans', -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     --font-sans:  'IBM Plex Sans', -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -104,7 +113,6 @@
   .bg-brand-accent\/5    { background-color: rgb(var(--ba) / 0.05) !important; }
   .bg-brand-accent\/10   { background-color: rgb(var(--ba) / 0.10) !important; }
   .text-brand-dark\/60   { color: rgb(var(--bd) / 0.60) !important; }
-  .text-brand-muted\/40  { color: rgb(var(--bm) / 0.40) !important; }
   .text-brand-accent\/10 { color: rgb(var(--ba) / 0.10) !important; }
   .text-brand-accent\/15 { color: rgb(var(--ba) / 0.15) !important; }
   .text-brand-accent\/20 { color: rgb(var(--ba) / 0.20) !important; }
@@ -143,6 +151,30 @@
     backdrop-filter: blur(10px);
   }
 
+  /* ── Mobile nav disclosure — a real <button> toggling a class via
+     content-loader.js, replacing a checkbox+label pattern that was
+     unreachable by keyboard (the checkbox was display:none, which
+     removes it from the tab order entirely). ── */
+  .mobile-toggle {
+    background: transparent; border: 0; cursor: pointer;
+  }
+  .mobile-nav {
+    max-height: 0; overflow: hidden; transition: max-height 0.5s;
+  }
+  .mobile-nav.is-open { max-height: 26rem; }
+
+  /* ── Visible keyboard focus, consistent across every interactive
+     element (buttons default to no browser outline in some UAs;
+     labels/divs used as controls have none at all). ── */
+  .nav-link:focus-visible,
+  .btn-primary:focus-visible, .btn-outline:focus-visible,
+  .btn-ghost-light:focus-visible, .btn-primary-sm:focus-visible,
+  .mobile-toggle:focus-visible {
+    outline: 2px solid rgb(var(--ba));
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
   /* ── Buttons ── */
   .btn-primary, .btn-outline, .btn-ghost-light, .btn-primary-sm {
     display: inline-block; font-family: var(--font-sans);
@@ -172,11 +204,15 @@
   }
   .btn-primary-sm:hover { background-color: rgb(var(--bas)); border-color: rgb(var(--bas)); }
 
-  /* ── Section typography helpers ── */
+  /* ── Section typography helpers ──
+     .sec-tag defaults to the darker on-light accent (--ba-text) since
+     most instances sit on white sections; the handful that sit on a
+     navy panel already carry an explicit .text-brand-accent override
+     in the markup, which still resolves to the brighter --ba. ── */
   .sec-tag {
     display: block; font-family: var(--font-sans); font-size: 0.6rem;
     letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600;
-    color: rgb(var(--ba));
+    color: rgb(var(--ba-text));
   }
   .sec-h2 {
     font-family: var(--font-serif); font-size: 1.875rem; font-weight: 700;
@@ -188,6 +224,15 @@
     margin-top: 1rem; margin-bottom: 1.25rem;
   }
   .sec-body { color: rgb(var(--bm)); font-size: 0.9375rem; line-height: 1.625; }
+
+  /* ── WCAG AA fix: re-point --bm to the lighter inverse slate inside
+     every navy/glass panel, so .text-brand-muted and .sec-body (used
+     identically by JS-rendered cards in both light and dark contexts)
+     get 7:1+ contrast instead of 3.84:1 once their card goes dark. ── */
+  .svc-dark .svc-card, .cv-dark .val-card, .vm-dark-card, .qual-panel,
+  .glass-panel, .contact-card, footer {
+    --bm: var(--bm-inverse);
+  }
 
   /* ── Dark-panel dot-grid texture overlay — was a ~9-line inline
      style="" block copy-pasted on every dark section across all

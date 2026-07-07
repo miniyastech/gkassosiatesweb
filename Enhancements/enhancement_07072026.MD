@@ -79,11 +79,17 @@
 ### Sprint 4 — Content Alterations — ⏭️ Not applicable (2026-07-07)
 - [x] Stakeholder confirmed: no content changes wanted at this time. `site_content/data.json` left untouched. Re-open this sprint later if specific copy changes come up — no code changes are needed to do so, just edits to that one file.
 
-### Sprint 5 — Responsive, Accessibility & Polish *(1 day)*
-- [ ] Mobile/tablet breakpoint audit across all 5 pages
-- [ ] Contrast/accessibility pass (WCAG AA minimum)
-- [ ] Subtle scroll-reveal / hover micro-interactions (kept formal, not flashy)
-- [ ] Image compression, `font-display`, lazy-loading pass for performance
+### Sprint 5 — Responsive, Accessibility & Polish *(1 day)* — ✅ Complete
+- [x] **Mobile keyboard/screen-reader bug found and fixed**: the mobile nav toggle was a `<label>` + `<input type="checkbox" class="hidden">`. `display:none` removes an element from the tab order entirely, so keyboard and screen-reader users could not open the mobile menu at all, on any page. Replaced with a real `<button aria-expanded aria-controls>` wired up by a small handler in `content-loader.js`, and a `.mobile-nav`/`.is-open` class toggle in `input.css` instead of the `peer-checked:` mechanism.
+- [x] Added the "Request a Report" CTA to the mobile menu too — it was only ever added to the desktop nav in Sprint 2, so mobile visitors were missing it.
+- [x] Added visible `:focus-visible` outlines (teal, 2px) to nav links, all button variants, and the mobile toggle — none had explicit focus styling before.
+- [x] **Contrast audit (computed WCAG ratios, not eyeballed)** — found and fixed 3 real AA failures introduced/inherited by the Concept C palette:
+  - Teal accent text (`#14b8a6`) on white was **2.49:1** (needs 4.5:1) — affects every `.sec-tag` eyebrow label sitewide. Fixed by giving `.sec-tag` a darker on-light default (`--ba-text`, teal-700 `#0f766e`, 5.47:1), with the 3 instances that legitimately sit on navy panels (index.html "What We Do"/"Our Purpose", about.html "Our Principles") explicitly kept on the brighter teal via `text-brand-accent`.
+  - Muted slate text (`#64748b`) on navy panels was **3.84:1** (needs 4.5:1) — affects glass-panel items, footer text, and every dark-variant card (`.svc-dark`, `.cv-dark`, `.vm-dark-card`, `.qual-panel`, `.contact-card`). Fixed by re-pointing the `--bm` custom property to a lighter inverse (`--bm-inverse`, slate-400 `#94a3b8`, 7.13:1) inside those container scopes — no markup changes needed since it's a CSS variable cascade.
+  - Footer's trailing "Asset Valuation Firm · Tamil Nadu" line was using `text-brand-muted/40`, **1.69:1**. Dropped the `/40` opacity — full-opacity muted-inverse now reads at 7.13:1. Removed the now-dead `.text-brand-muted\/40` CSS rule (nothing else used it).
+- [x] Image performance: removed `logo_old.png` + `logo_old_1.png` (~1.4MB, confirmed unused — only `logo.png` is referenced anywhere), added explicit `width`/`height` to the logo and founder photo to prevent layout shift, added `loading="lazy" decoding="async"` to the founder photo.
+- [x] `font-display: swap` already in place from Sprint 1 — confirmed, no action needed.
+- [x] Verified all 5 pages still return HTTP 200 and render the new attributes/classes after every change
 
 ### Sprint 6 — QA & Local Verification *(0.5 day)*
 - [ ] Cross-browser check (Chrome/Edge/Firefox, mobile viewport)
