@@ -76,8 +76,16 @@
 - [x] `contact.html` — rounded corners on the map embed frame
 - [x] Verified all 5 pages still return HTTP 200 and render the new classes after every change
 
-### Sprint 4 — Content Alterations — ⏭️ Not applicable (2026-07-07)
-- [x] Stakeholder confirmed: no content changes wanted at this time. `site_content/data.json` left untouched. Re-open this sprint later if specific copy changes come up — no code changes are needed to do so, just edits to that one file.
+### Sprint 4 — Content Alterations — ✅ Complete (2026-07-08)
+- [x] **Services restructured into 3 categories** in `site_content/data.json` (`services` array), replacing the previous 5 valuation-only entries — flows automatically into both the homepage summary cards and `services.html` detail cards, no template changes needed:
+  1. Property Valuation — Land &amp; Building (7 sub-items)
+  2. Planning &amp; Design Services (8 sub-items)
+  3. Approval &amp; Documentation Services (7 sub-items)
+  - Footer "Our Services" quick-links updated to the 3 new category names across all 6 pages
+- [x] **Removed "Bank Empanelled – Multiple Institutions"** from `team[0].qualifications` in `data.json`
+- [x] **Added "Our Clients" page** (`clients.html`) — hero, intro, and a `clients-list` grid rendered from a new `data.clients` array via a new `clientCard()` function in `content-loader.js`. Added to header (desktop + mobile) and footer nav on all 7 pages.
+  - First entry: SMFG India Credit Co. Ltd. — client model supports `clients[].logo` (renders an `<img>` when set), currently `null` so it falls back to a clean text tile.
+  - **Still needed from you:** the actual SMFG India Credit Co. Ltd. logo file. No verified official logo was available in this session, and guessing/fetching a brand logo from an unconfirmed URL risks using the wrong asset for a real company, so nothing was fabricated. Drop the file in `site_content/` and set `"logo": "./site_content/<filename>"` in `data.json` — the image will render automatically, no code changes needed.
 
 ### Sprint 5 — Responsive, Accessibility & Polish *(1 day)* — ✅ Complete
 - [x] **Mobile keyboard/screen-reader bug found and fixed**: the mobile nav toggle was a `<label>` + `<input type="checkbox" class="hidden">`. `display:none` removes an element from the tab order entirely, so keyboard and screen-reader users could not open the mobile menu at all, on any page. Replaced with a real `<button aria-expanded aria-controls>` wired up by a small handler in `content-loader.js`, and a `.mobile-nav`/`.is-open` class toggle in `input.css` instead of the `peer-checked:` mechanism.

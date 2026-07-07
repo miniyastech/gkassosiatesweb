@@ -145,6 +145,17 @@
       '</div>';
   }
 
+  /* Client logo tiles  →  #clients-list
+     Renders an <img> when a logo path is supplied, otherwise falls
+     back to the client's name as styled text. */
+  function clientCard(client) {
+    var mark = client.logo
+      ? '<img src="' + client.logo + '" alt="' + client.name + '" class="max-h-14 w-auto object-contain" />'
+      : '<span class="font-serif text-base font-semibold text-brand-dark text-center leading-snug">' + client.name + '</span>';
+    return '<div class="border border-brand-muted/15 rounded-xl h-32 flex items-center justify-center p-6 ' +
+           'hover:border-brand-accent/40 transition-colors duration-300">' + mark + '</div>';
+  }
+
   /* ══════════════════════════════════════════════════════════
      MAIN INJECT  —  called once data.json is fetched
   ══════════════════════════════════════════════════════════ */
@@ -181,6 +192,9 @@
     render('team-list',               data.team,                                                          function (c) { return c.map(teamCard).join(''); });
     render('founder-expertise',       data.team && data.team[0] && data.team[0].expertise,                function (c) { return c.map(founderExpertiseTag).join(''); });
     render('founder-qualifications',  data.team && data.team[0] && data.team[0].qualifications,           function (c) { return c.map(founderQualCard).join(''); });
+
+    /* clients.html */
+    render('clients-list',            data.clients,                                                       function (c) { return c.map(clientCard).join(''); });
   }
 
   /* ── Mobile nav disclosure (keyboard/screen-reader accessible) ──
