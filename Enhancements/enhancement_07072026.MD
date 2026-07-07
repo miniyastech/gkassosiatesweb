@@ -76,9 +76,8 @@
 - [x] `contact.html` — rounded corners on the map embed frame
 - [x] Verified all 5 pages still return HTTP 200 and render the new classes after every change
 
-### Sprint 4 — Content Alterations *(0.5–1 day, scope pending)*
-- [ ] **Blocked on stakeholder input** — no specific copy/section changes have been provided yet (see Open Question 1 below). Nothing invented or changed in `site_content/data.json` in this pass, since the brief is "content stays the same" unless explicitly told otherwise.
-- [ ] Once scope is provided: apply approved text changes only in `site_content/data.json` (no structural/markup change needed — this is the whole point of the content-loader pattern)
+### Sprint 4 — Content Alterations — ⏭️ Not applicable (2026-07-07)
+- [x] Stakeholder confirmed: no content changes wanted at this time. `site_content/data.json` left untouched. Re-open this sprint later if specific copy changes come up — no code changes are needed to do so, just edits to that one file.
 
 ### Sprint 5 — Responsive, Accessibility & Polish *(1 day)*
 - [ ] Mobile/tablet breakpoint audit across all 5 pages
