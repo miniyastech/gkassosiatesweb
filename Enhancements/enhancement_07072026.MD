@@ -65,16 +65,20 @@
 - [x] New hero pattern for `index.html`: navy→navy-2 gradient background (`.hero-gradient`) replacing the flat dark fill, trust panel rewired onto a reusable `.glass-panel`/`.glass-item`/`.glass-dot` component (frosted glass, teal icon dots) instead of one-off utility classes, subtle fade-up entrance motion (`.reveal-up`, respects `prefers-reduced-motion`)
 - [x] Shared reusable component classes consolidated in `input.css`: `.btn-primary` / `.btn-outline` / `.btn-ghost-light` / `.btn-primary-sm`, `.svc-card` / `.svc-detail` / `.val-card` / `.team-card`, `.sec-tag` / `.sec-h2` / `.sec-rule` / `.sec-body`, `.glass-panel` / `.glass-item` / `.glass-dot`, `.chk-list`, `.exp-tag`, `.info-icon` / `.contact-card`, `.avatar` — all now defined once and used across pages instead of being redefined (or missing) per page
 
-### Sprint 3 — Page-by-Page Redesign *(2 days)*
-- [ ] `index.html` — hero, trust items, services summary, why-choose-us
-- [ ] `about.html` — vision/mission, "defines us" panel, core values
-- [ ] `services.html` — service detail cards
-- [ ] `team.html` — team cards, founder spotlight
-- [ ] `contact.html` — contact layout, map embed styling, address/hours presentation
+### Sprint 3 — Page-by-Page Redesign *(2 days)* — ✅ Complete
+- [x] Centralized the dot-grid dark-panel texture (previously a ~9-line inline `style=""` block copy-pasted 14 times across all 5 pages) into one `.panel-texture` component class
+- [x] `home-why-items` / `about-why-items`: converted from plain left-border rows to the same `.glass-panel` treatment used by the hero trust panel, so every navy-panel section shares one visual language instead of two competing ones
+- [x] Removed dead code found along the way: `whyItemLight()` in `content-loader.js` and its `.why-item` CSS class were never actually called by anything (both `home-why-items` and `about-why-items` render through `whyItemDark`) — deleted rather than left as unused cruft
+- [x] `index.html` — rounded corners (`rounded-2xl`) added to the core-commitments and why-choose-us dark panels for visual consistency with the card language elsewhere
+- [x] `about.html` — rounded corners on the "defines us" dark panel and the vision/mission cards
+- [x] `services.html` — rounded corners on the intro dark stat panel and its 4 stat tiles
+- [x] `team.html` — rounded corners on the founder two-panel showcase, the avatar frame, and the 6 areas-of-expertise tiles; added a missing hover state (`hover:border-brand-accent/40`) to those tiles for interactive consistency with every other card on the site
+- [x] `contact.html` — rounded corners on the map embed frame
+- [x] Verified all 5 pages still return HTTP 200 and render the new classes after every change
 
 ### Sprint 4 — Content Alterations *(0.5–1 day, scope pending)*
-- [ ] Confirm with stakeholder exactly which copy/sections change vs. stay as-is
-- [ ] Apply approved text changes only in `site_content/data.json` (no structural/markup change needed — this is the whole point of the content-loader pattern)
+- [ ] **Blocked on stakeholder input** — no specific copy/section changes have been provided yet (see Open Question 1 below). Nothing invented or changed in `site_content/data.json` in this pass, since the brief is "content stays the same" unless explicitly told otherwise.
+- [ ] Once scope is provided: apply approved text changes only in `site_content/data.json` (no structural/markup change needed — this is the whole point of the content-loader pattern)
 
 ### Sprint 5 — Responsive, Accessibility & Polish *(1 day)*
 - [ ] Mobile/tablet breakpoint audit across all 5 pages

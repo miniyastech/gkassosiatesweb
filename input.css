@@ -189,6 +189,17 @@
   }
   .sec-body { color: rgb(var(--bm)); font-size: 0.9375rem; line-height: 1.625; }
 
+  /* ── Dark-panel dot-grid texture overlay — was a ~9-line inline
+     style="" block copy-pasted on every dark section across all
+     5 pages; now one class. ── */
+  .panel-texture {
+    position: absolute; inset: 0; pointer-events: none; opacity: .03;
+    background-image:
+      linear-gradient(rgb(var(--bl)) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--bl)) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
   /* ── Hero gradient background (index.html) ── */
   .hero-gradient {
     background: linear-gradient(155deg, rgb(var(--bd)), rgb(var(--bd2)));
@@ -251,12 +262,6 @@
   .chk-list li span.tick {
     margin-top: 0.15rem; flex-shrink: 0; width: 1rem; height: 1rem;
     color: rgb(var(--ba)); font-size: 0.65rem; font-weight: 700;
-  }
-
-  /* ── Why-choose left-border items ── */
-  .why-item {
-    border-left: 2px solid rgb(var(--ba));
-    padding-left: 1.25rem; padding-top: 0.125rem; padding-bottom: 0.125rem;
   }
 
   /* ── Vision & Mission dark section (index.html) ── */

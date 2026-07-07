@@ -70,14 +70,6 @@
       '</div>';
   }
 
-  /* Why-choose-us items — light bg  →  #home-why-items */
-  function whyItemLight(item) {
-    return '<div class="why-item">' +
-      '<h4 class="font-serif text-[0.95rem] font-semibold text-brand-dark mb-1.5">' + item.title + '</h4>' +
-      '<p class="text-brand-muted text-sm leading-relaxed">' + item.desc + '</p>' +
-      '</div>';
-  }
-
   /* Core values cards  →  #about-core-values */
   function coreValueCard(val) {
     return '<div class="val-card">' +
@@ -89,9 +81,10 @@
       '</div>';
   }
 
-  /* Why-choose-us items — dark bg  →  #about-why-items */
+  /* Why-choose-us items — glass cards on navy panels
+     →  #home-why-items  |  #about-why-items */
   function whyItemDark(item) {
-    return '<div class="border-l-2 border-brand-accent pl-5">' +
+    return '<div class="glass-panel p-5">' +
       '<h4 class="font-serif text-white text-[0.95rem] font-semibold mb-2">' + item.title + '</h4>' +
       '<p class="text-brand-muted text-sm leading-relaxed">' + item.desc + '</p>' +
       '</div>';
