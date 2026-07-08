@@ -7,171 +7,52 @@
   <link rel="icon" type="image/x-icon" href="./site_content/favicon.ico" />
   <title>Our Team — GK Associates</title>
   <link rel="stylesheet" href="./site_content/styles.css" />
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'brand-dark':   '#0f172a',
-            'brand-light':  '#ffffff',
-            'brand-accent': '#2563eb',
-            'brand-muted':  '#94a3b8',
-          },
-          fontFamily: {
-            serif: ['var(--font-serif)', 'Georgia', 'serif'],
-            sans:  ['var(--font-sans)',  'system-ui', 'sans-serif'],
-          },
-        },
-      },
-    };
-  </script>
 
-  <style>
-    :root {
-      --bd: 15 23 42;
-      --bl: 255 255 255;
-      --ba: 37 99 235;
-      --bm: 148 163 184;
-      --font-serif: 'Merriweather', Georgia, serif;
-      --font-sans:  'Roboto', system-ui, sans-serif;
-    }
-    body {
-      background-color: rgb(var(--bl));
-      color: rgb(var(--bd));
-      font-family: var(--font-sans);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    h1, h2, h3, h4, h5, h6 { font-family: var(--font-serif); }
-  </style>
-
-  <style>
-    .font-serif { font-family: var(--font-serif) !important; }
-    .font-sans  { font-family: var(--font-sans)  !important; }
-    .bg-brand-dark   { background-color: rgb(var(--bd)) !important; }
-    .bg-brand-light  { background-color: rgb(var(--bl)) !important; }
-    .bg-brand-accent { background-color: rgb(var(--ba)) !important; }
-    .text-brand-dark   { color: rgb(var(--bd)) !important; }
-    .text-brand-light  { color: rgb(var(--bl)) !important; }
-    .text-brand-accent { color: rgb(var(--ba)) !important; }
-    .text-brand-muted  { color: rgb(var(--bm)) !important; }
-    .border-brand-accent { border-color: rgb(var(--ba)) !important; }
-    .border-brand-muted  { border-color: rgb(var(--bm)) !important; }
-    .bg-brand-accent\/10 { background-color: rgb(var(--ba) / 0.10) !important; }
-    .text-brand-accent\/10 { color: rgb(var(--ba) / 0.10) !important; }
-    .border-brand-muted\/15 { border-color: rgb(var(--bm) / 0.15) !important; }
-    .border-brand-muted\/20 { border-color: rgb(var(--bm) / 0.20) !important; }
-    .border-brand-accent\/40 { border-color: rgb(var(--ba) / 0.40) !important; }
-    .hover\:text-brand-accent:hover { color: rgb(var(--ba)) !important; }
-
-    .nav-link {
-      position: relative; font-size: 0.65rem; letter-spacing: 0.16em;
-      text-transform: uppercase; font-weight: 500;
-      color: rgb(var(--bd) / 0.6); transition: color 0.2s; text-decoration: none;
-    }
-    .nav-link::after {
-      content: ''; position: absolute; bottom: -2px; left: 0;
-      width: 0; height: 1px; background-color: rgb(var(--ba)); transition: width 0.3s;
-    }
-    .nav-link:hover, .nav-link.active         { color: rgb(var(--ba)); }
-    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
-    .sec-tag {
-      display: block; font-family: var(--font-sans); font-size: 0.6rem;
-      letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500;
-      color: rgb(var(--ba));
-    }
-    .sec-h2 {
-      font-family: var(--font-serif); font-size: 1.875rem; font-weight: 600;
-      color: rgb(var(--bd)); line-height: 1.25; margin-top: 0.5rem;
-    }
-    @media (min-width: 768px) { .sec-h2 { font-size: 2.25rem; } }
-    .sec-rule {
-      width: 2.5rem; height: 0.125rem; background-color: rgb(var(--ba));
-      margin-top: 1rem; margin-bottom: 1.25rem;
-    }
-    .sec-body { color: rgb(var(--bm)); font-size: 0.9375rem; line-height: 1.625; }
-
-    /* Team member card */
-    .team-card {
-      background: #fff; border: 1px solid rgb(var(--bm) / 0.15);
-      transition: border-color 0.3s, box-shadow 0.3s;
-    }
-    .team-card:hover {
-      border-color: rgb(var(--ba) / 0.40);
-      box-shadow: 0 8px 24px -6px rgba(37,99,235,0.10);
-    }
-
-    /* Avatar placeholder */
-    .avatar {
-      width: 100%; aspect-ratio: 1/1;
-      background: rgb(var(--bd));
-      display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
-    }
-    .avatar::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-      height: 3px; background: rgb(var(--ba));
-    }
-
-    /* Professional Highlights dark panel */
-    .qual-panel .text-brand-dark { color: #ffffff !important; }
-
-    /* Expertise tag */
-    .exp-tag {
-      display: inline-block;
-      font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase;
-      font-weight: 500; padding: 0.3rem 0.75rem;
-      border: 1px solid rgb(var(--ba) / 0.40);
-      color: rgb(var(--ba));
-    }
-  </style>
 </head>
 
 <body class="min-h-screen flex flex-col">
 
   <!-- HEADER -->
-  <header class="bg-white border-b border-brand-muted/20 sticky top-0 z-50">
+  <header class="site-header border-b border-brand-muted/20 sticky top-0 z-50">
     <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         <a href="/" class="flex items-center">
-          <img src="./site_content/logo.png" alt="GK Associates" class="h-12 w-auto object-contain" />
+          <img src="./site_content/logo.png" alt="GK Associates" width="400" height="218" class="h-12 w-auto object-contain" />
         </a>
-        <nav class="hidden md:flex items-center gap-10">
+        <nav class="hidden md:flex items-center gap-8">
           <a href="/"    class="nav-link">Home</a>
           <a href="/about"    class="nav-link">About</a>
           <a href="/services" class="nav-link">Services</a>
           <a href="/team"     class="nav-link active">Our Team</a>
+          <a href="/clients"  class="nav-link">Our Clients</a>
           <a href="/contact"  class="nav-link">Contact</a>
+          <a href="/contact" class="btn-primary-sm">Request a Report</a>
         </nav>
-        <label for="mob-toggle" class="md:hidden flex flex-col gap-[5px] cursor-pointer p-2" aria-label="Open menu">
+        <button type="button" class="mobile-toggle md:hidden flex flex-col gap-[5px] p-2"
+                aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
           <span class="w-6 h-px bg-brand-dark block transition-all duration-300"></span>
           <span class="w-6 h-px bg-brand-dark block transition-all duration-300"></span>
           <span class="w-4 h-px bg-brand-dark block transition-all duration-300"></span>
-        </label>
+        </button>
       </div>
     </div>
-    <input type="checkbox" id="mob-toggle" class="hidden peer" />
-    <nav class="md:hidden max-h-0 overflow-hidden peer-checked:max-h-[26rem] transition-all duration-500 bg-white border-t border-brand-muted/15">
+    <nav id="mobile-nav" class="mobile-nav md:hidden bg-white border-t border-brand-muted/15">
       <div class="flex flex-col px-6 py-5 gap-5">
         <a href="/"    class="nav-link py-1">Home</a>
         <a href="/about"    class="nav-link py-1">About</a>
         <a href="/services" class="nav-link py-1">Services</a>
         <a href="/team"     class="nav-link py-1 active">Our Team</a>
+        <a href="/clients"  class="nav-link py-1">Our Clients</a>
         <a href="/contact"  class="nav-link py-1">Contact</a>
+        <a href="/contact" class="btn-primary-sm text-center">Request a Report</a>
       </div>
     </nav>
   </header>
 
-
   <!-- PAGE HERO -->
   <section class="bg-brand-dark relative overflow-hidden">
     <div class="absolute left-0 top-0 bottom-0 w-1 bg-brand-accent"></div>
-    <div class="absolute inset-0 pointer-events-none"
-         style="opacity:0.03;
-                background-image:
-                  linear-gradient(rgb(var(--bl)) 1px,transparent 1px),
-                  linear-gradient(90deg,rgb(var(--bl)) 1px,transparent 1px);
-                background-size:48px 48px;"></div>
+    <div class="panel-texture"></div>
     <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
       <p class="font-sans text-brand-accent text-xs tracking-widest uppercase mb-3">GK Associates</p>
       <h1 class="font-serif text-3xl md:text-5xl font-bold text-white">Our Team</h1>
@@ -182,7 +63,6 @@
       </nav>
     </div>
   </section>
-
 
   <main class="flex-1">
 
@@ -201,7 +81,6 @@
       </div>
     </section>
 
-
     <!-- FOUNDER PROFILE -->
     <section class="bg-brand-light py-20 md:py-28">
       <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -212,15 +91,15 @@
         </div>
 
         <!-- Two-panel founder showcase -->
-        <div class="grid md:grid-cols-5 border border-brand-muted/15 overflow-hidden max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-5 border border-brand-muted/15 rounded-2xl overflow-hidden max-w-5xl mx-auto">
 
           <!-- LEFT: Identity panel -->
           <div class="md:col-span-2 bg-brand-dark p-10 md:p-14 flex flex-col items-center text-center relative">
             <div class="absolute inset-y-0 left-0 w-1 bg-brand-accent"></div>
 
             <!-- Avatar -->
-            <div class="mb-8" style="width:17rem;height:17rem;overflow:hidden;border:2px solid rgb(var(--ba)/0.35);">
-              <img src="./site_content/founder.png" alt="Ganesh Kumar M"
+            <div class="mb-8" style="width:17rem;height:17rem;overflow:hidden;border:2px solid rgb(var(--ba)/0.35);border-radius:16px;">
+              <img src="./site_content/founder.png" alt="Ganesh Kumar M" width="413" height="531" loading="lazy" decoding="async"
                    style="width:100%;height:100%;object-fit:cover;object-position:top;" />
             </div>
 
@@ -254,12 +133,7 @@
 
             <div class="qual-panel bg-brand-dark relative overflow-hidden
                         -mx-10 -mb-10 md:-mx-12 md:-mb-12 mt-auto p-10 md:p-12">
-              <div class="absolute inset-0 pointer-events-none"
-                   style="opacity:0.03;
-                          background-image:
-                            linear-gradient(rgb(var(--bl)) 1px,transparent 1px),
-                            linear-gradient(90deg,rgb(var(--bl)) 1px,transparent 1px);
-                          background-size:48px 48px;"></div>
+              <div class="panel-texture"></div>
               <span class="sec-tag mb-6 block relative">Professional Highlights</span>
               <div id="founder-qualifications" class="relative grid grid-cols-1 sm:grid-cols-2 gap-6"></div>
             </div>
@@ -269,16 +143,10 @@
       </div>
     </section>
 
-
     <!-- AREAS OF EXPERTISE -->
     <section class="bg-brand-dark py-20 md:py-28 relative overflow-hidden">
       <div class="absolute left-0 top-0 bottom-0 w-1 bg-brand-accent"></div>
-      <div class="absolute inset-0 pointer-events-none"
-           style="opacity:0.03;
-                  background-image:
-                    linear-gradient(rgb(var(--bl)) 1px,transparent 1px),
-                    linear-gradient(90deg,rgb(var(--bl)) 1px,transparent 1px);
-                  background-size:48px 48px;"></div>
+      <div class="panel-texture"></div>
       <div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-14">
           <span class="sec-tag text-brand-accent">Team Competencies</span>
@@ -289,37 +157,37 @@
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-          <div class="border border-white/10 p-6">
+          <div class="border border-white/10 rounded-xl p-6 hover:border-brand-accent/40 transition-colors duration-300">
             <div class="w-6 h-px bg-brand-accent mb-5"></div>
             <h4 class="font-serif text-white text-[0.95rem] font-semibold mb-2">Residential &amp; Commercial Valuation</h4>
             <p class="text-brand-muted text-sm leading-relaxed">Flats, plots, independent houses, offices, retail spaces, and mixed-use properties.</p>
           </div>
 
-          <div class="border border-white/10 p-6">
+          <div class="border border-white/10 rounded-xl p-6 hover:border-brand-accent/40 transition-colors duration-300">
             <div class="w-6 h-px bg-brand-accent mb-5"></div>
             <h4 class="font-serif text-white text-[0.95rem] font-semibold mb-2">Industrial &amp; Warehouse Properties</h4>
             <p class="text-brand-muted text-sm leading-relaxed">Factory units, industrial sheds, cold storage, and logistics properties across Tamil Nadu.</p>
           </div>
 
-          <div class="border border-white/10 p-6">
+          <div class="border border-white/10 rounded-xl p-6 hover:border-brand-accent/40 transition-colors duration-300">
             <div class="w-6 h-px bg-brand-accent mb-5"></div>
             <h4 class="font-serif text-white text-[0.95rem] font-semibold mb-2">Agricultural Land Assessment</h4>
             <p class="text-brand-muted text-sm leading-relaxed">Valuation of dry land, wet land, plantation properties, and converted agricultural plots.</p>
           </div>
 
-          <div class="border border-white/10 p-6">
+          <div class="border border-white/10 rounded-xl p-6 hover:border-brand-accent/40 transition-colors duration-300">
             <div class="w-6 h-px bg-brand-accent mb-5"></div>
             <h4 class="font-serif text-white text-[0.95rem] font-semibold mb-2">Banking &amp; NBFC Reporting</h4>
             <p class="text-brand-muted text-sm leading-relaxed">Pre-disbursement and post-disbursement valuation reports for nationalised and private lenders.</p>
           </div>
 
-          <div class="border border-white/10 p-6">
+          <div class="border border-white/10 rounded-xl p-6 hover:border-brand-accent/40 transition-colors duration-300">
             <div class="w-6 h-px bg-brand-accent mb-5"></div>
             <h4 class="font-serif text-white text-[0.95rem] font-semibold mb-2">Legal &amp; Court Valuations</h4>
             <p class="text-brand-muted text-sm leading-relaxed">Reports prepared for stamp duty, capital gains, succession, and dispute resolution purposes.</p>
           </div>
 
-          <div class="border border-white/10 p-6">
+          <div class="border border-white/10 rounded-xl p-6 hover:border-brand-accent/40 transition-colors duration-300">
             <div class="w-6 h-px bg-brand-accent mb-5"></div>
             <h4 class="font-serif text-white text-[0.95rem] font-semibold mb-2">Project &amp; Collateral Monitoring</h4>
             <p class="text-brand-muted text-sm leading-relaxed">Stage-wise project inspection and collateral valuation for project finance and loan monitoring.</p>
@@ -331,9 +199,8 @@
 
   </main>
 
-
   <!-- FOOTER -->
-  <footer class="bg-brand-dark text-brand-muted border-t border-white/10">
+  <footer class="bg-brand-dark text-brand-muted border-t-2 border-brand-accent">
     <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
       <div>
         <a href="/" class="inline-block mb-4 group">
@@ -349,6 +216,7 @@
           <li><a href="/about"    class="hover:text-brand-accent transition-colors duration-200">About Us</a></li>
           <li><a href="/services" class="hover:text-brand-accent transition-colors duration-200">Our Services</a></li>
           <li><a href="/team"     class="hover:text-brand-accent transition-colors duration-200">Our Team</a></li>
+          <li><a href="/clients"  class="hover:text-brand-accent transition-colors duration-200">Our Clients</a></li>
           <li><a href="/contact"  class="hover:text-brand-accent transition-colors duration-200">Contact</a></li>
         </ul>
       </div>
@@ -356,17 +224,15 @@
         <h5 class="font-serif text-white text-base font-semibold mb-5">Our Services</h5>
         <ul class="space-y-3 text-sm">
           <li><a href="/services" class="hover:text-brand-accent transition-colors duration-200">Property Valuation</a></li>
-          <li><a href="/services" class="hover:text-brand-accent transition-colors duration-200">Bank Valuation Reports</a></li>
-          <li><a href="/services" class="hover:text-brand-accent transition-colors duration-200">Technical Verification</a></li>
-          <li><a href="/services" class="hover:text-brand-accent transition-colors duration-200">Market Value Assessment</a></li>
-          <li><a href="/services" class="hover:text-brand-accent transition-colors duration-200">Collateral Evaluation</a></li>
+          <li><a href="/services" class="hover:text-brand-accent transition-colors duration-200">Planning &amp; Design Services</a></li>
+          <li><a href="/services" class="hover:text-brand-accent transition-colors duration-200">Approval &amp; Documentation Services</a></li>
         </ul>
       </div>
     </div>
     <div class="border-t border-white/10">
     <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs">
         <span>&copy; 2026 GK Associates. All rights reserved.</span>
-        <span class="text-brand-muted/40">Asset Valuation Firm · Tamil Nadu</span>
+        <span class="text-brand-muted">Asset Valuation Firm · Tamil Nadu</span>
       </div>
     </div>
   </footer>

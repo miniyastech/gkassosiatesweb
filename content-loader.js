@@ -34,9 +34,8 @@
 
   /* Hero trust panel  →  #home-trust-items  (ul) */
   function trustItem(item) {
-    return '<li class="flex items-start gap-4">' +
-      '<span class="mt-0.5 w-5 h-5 flex-shrink-0 flex items-center justify-center ' +
-             'border border-brand-accent text-brand-accent text-[0.6rem] font-bold">\u2713</span>' +
+    return '<li class="glass-item">' +
+      '<span class="glass-dot">\u2713</span>' +
       '<div>' +
         '<p class="font-serif text-white text-[0.95rem] font-semibold">' + item.title + '</p>' +
         '<p class="text-brand-muted text-xs mt-0.5 leading-relaxed">' + item.desc + '</p>' +
@@ -71,14 +70,6 @@
       '</div>';
   }
 
-  /* Why-choose-us items — light bg  →  #home-why-items */
-  function whyItemLight(item) {
-    return '<div class="why-item">' +
-      '<h4 class="font-serif text-[0.95rem] font-semibold text-brand-dark mb-1.5">' + item.title + '</h4>' +
-      '<p class="text-brand-muted text-sm leading-relaxed">' + item.desc + '</p>' +
-      '</div>';
-  }
-
   /* Core values cards  →  #about-core-values */
   function coreValueCard(val) {
     return '<div class="val-card">' +
@@ -90,9 +81,10 @@
       '</div>';
   }
 
-  /* Why-choose-us items — dark bg  →  #about-why-items */
+  /* Why-choose-us items — glass cards on navy panels
+     →  #home-why-items  |  #about-why-items */
   function whyItemDark(item) {
-    return '<div class="border-l-2 border-brand-accent pl-5">' +
+    return '<div class="glass-panel p-5">' +
       '<h4 class="font-serif text-white text-[0.95rem] font-semibold mb-2">' + item.title + '</h4>' +
       '<p class="text-brand-muted text-sm leading-relaxed">' + item.desc + '</p>' +
       '</div>';
@@ -153,6 +145,17 @@
       '</div>';
   }
 
+  /* Client logo tiles  →  #clients-list
+     Renders an <img> when a logo path is supplied, otherwise falls
+     back to the client's name as styled text. */
+  function clientCard(client) {
+    var mark = client.logo
+      ? '<img src="' + client.logo + '" alt="' + client.name + '" class="max-h-14 w-auto object-contain" />'
+      : '<span class="font-serif text-base font-semibold text-brand-dark text-center leading-snug">' + client.name + '</span>';
+    return '<div class="border border-brand-muted/15 rounded-xl h-32 flex items-center justify-center p-6 ' +
+           'hover:border-brand-accent/40 transition-colors duration-300">' + mark + '</div>';
+  }
+
   /* ══════════════════════════════════════════════════════════
      MAIN INJECT  —  called once data.json is fetched
   ══════════════════════════════════════════════════════════ */
@@ -189,7 +192,22 @@
     render('team-list',               data.team,                                                          function (c) { return c.map(teamCard).join(''); });
     render('founder-expertise',       data.team && data.team[0] && data.team[0].expertise,                function (c) { return c.map(founderExpertiseTag).join(''); });
     render('founder-qualifications',  data.team && data.team[0] && data.team[0].qualifications,           function (c) { return c.map(founderQualCard).join(''); });
+
+    /* clients.html */
+    render('clients-list',            data.clients,                                                       function (c) { return c.map(clientCard).join(''); });
   }
+
+  /* ── Mobile nav disclosure (keyboard/screen-reader accessible) ──
+     Independent of the data.json fetch below — the menu must open
+     even if content fails to load. */
+  document.querySelectorAll('.mobile-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var target = document.getElementById(btn.getAttribute('aria-controls'));
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      if (target) target.classList.toggle('is-open');
+    });
+  });
 
   /* ── Fetch site_content/data.json ─────────────────────────── */
   fetch('./site_content/data.json')
